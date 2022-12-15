@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Appointment</title>
+</head>
+<body>
+<h1><a href="/">Home</a></h1>
+<h1>Book Appointment</h1>
+<form method="post">
+    <input type="date" id="date" name="date"/>
+    <input type="submit" value="Check Timeslot"/>
+</form>
+    {{if .}}
+<form method = "post">
+    <label for="time">Choose a timeslot:</label>
+    <select id="time" name="time">
+        {{range $time:= .}}
+        <option value="{{$time}}">{{$time}}</option>
+        {{end}}
+    </select>
+    <input type="submit">
+</form>
+{{end}}
+</body>
+</html>

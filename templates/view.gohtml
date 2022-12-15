@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Appointment</title>
+</head>
+<body>
+<h1><a href="/">Home</a></h1>
+<h1>Appointment</h1>
+<table style= "width:50%">
+<tr>
+    <th>Date</th>
+    <th>Time</th>
+</tr>
+{{range $date,$timeslot:= .}}
+    {{range $time:= $timeslot}}
+    <tr>
+        <td>{{$date}}</td>
+       <td>{{$time}}</td>
+    </tr>
+    {{end}}
+{{end}}
+</table>
+
+<h1>Edit Appointment</h1>
+<form method="post">
+    <label for="timeslot">Select Timeslot:</label>
+    <select id="timeslot" name="timeslot">
+    {{range $date,$timeslot:= .}}
+        {{range $time:= $timeslot}}
+            <option value = "{{$date}} {{$time}}">{{$date}} {{$time}}</option>
+        {{end}}
+    {{end}}
+    </select>
+    <input type="submit" value="Delete Appointment"/>
+</form>
+</body>
+</html>

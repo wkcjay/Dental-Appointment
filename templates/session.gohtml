@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Book Appointment</title>
+</head>
+<body>
+<h1><a href="/">Home</a></h1>
+<h1>Delete Sessions</h1>
+<form method="post">
+    <label for="username">Choose a username:</label>
+    <select id="username" name="username">
+    {{range $cookievalue,$username:= .}}
+            <option value = "{{$cookievalue}}">{{$username}}</option>
+    {{end}}
+    </select>
+    <input type="submit" value="Delete"/>
+</form>
+<h1>Sessions</h1>
+<table style= "width:50%">
+<tr>
+    <th>Cookie Value</th>
+    <th>Username</th>
+</tr>
+{{range $cookievalue,$username:= .}}
+    <tr>
+        <td>{{$cookievalue}}</td>
+        <td>{{$username}}</td>
+    </tr>
+{{end}}
+</table>
+</body>
+</html>

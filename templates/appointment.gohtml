@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Appointment</title>
+</head>
+<body>
+<h1>
+<a href="/">Home</a>
+<a href="/block">Block</a>
+<a href="/delete">Delete</a>
+</h1>
+<h1>Appointment</h1>
+<table style= "width:50%">
+<tr>
+    <th>Date</th>
+    <th>Time</th>
+    <th>User</th>
+</tr>
+{{range $date,$timeuser:= .}}
+    {{range $time,$username:= $timeuser}}
+    <tr>
+        <td>{{$date}}</td>
+       <td>{{$time}}</td>
+       <td>{{$username}}</td>
+    </tr>
+    {{end}}
+{{end}}
+</table>
+</body>
+</html>

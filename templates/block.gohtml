@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Appointment</title>
+</head>
+<body>
+<h1>
+<a href="/">Home</a>
+<a href="/appointment">Appointment</a>
+<a href="/delete">Delete</a>
+</h1>
+<h1>Block Appointment</h1>
+<form method="post">
+    <input type="date" id="startdate" name="startdate">
+    <input type="date" id="enddate" name="enddate">
+    <label for="time">Choose a timeslot:</label>
+    <select id="time" name="time">
+        <option value="am">AM</option>
+        <option value="pm">PM</option>
+        <option value="wholeday">Whole Day</option>
+    </select>
+    <input type="submit"/>
+</form>
+<h1>Appointment</h1>
+<table style= "width:50%">
+<tr>
+    <th>Date</th>
+    <th>Time</th>
+    <th>User</th>
+</tr>
+{{range $date,$timeuser:= .}}
+    {{range $time,$username:= $timeuser}}
+    <tr>
+        <td>{{$date}}</td>
+       <td>{{$time}}</td>
+       <td>{{$username}}</td>
+    </tr>
+    {{end}}
+{{end}}
+</table>
+</body>
+</html>
