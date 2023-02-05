@@ -1,6 +1,8 @@
 # Dental-Appointment System
 ## Objective
 This project is to create a prototype of an application, Dental Appointment System, mainly focusing on the backend development using GoLang in a Client-Server Setup
+## Setup
+Localhost (127.0.0.1) at port 5221
 ## Features
 ### For Client:
 ### Login Feature
