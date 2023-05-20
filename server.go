@@ -81,7 +81,7 @@ func main() {
 	http.HandleFunc("/user", deleteuser)
 	http.HandleFunc("/deleteuser", deleteuser)
 	http.Handle("/favicon.ico", http.NotFoundHandler())
-	http.ListenAndServe("https://wkcjay.github.io/Dental-Appointment.github.io/", nil)
+	http.ListenAndServe("https://wkcjay.github.io/Dental-Appointment/", nil)
 
 }
 func removepastdatetime() {
